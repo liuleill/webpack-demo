@@ -7,7 +7,10 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+      title:'liulei',
+      template:'src/assets/index.html'
+  })],
 
   module: {
     rules: [
