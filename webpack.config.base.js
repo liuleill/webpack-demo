@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path")
+//const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -13,6 +14,16 @@ module.exports = {
   ],
   module: {
     rules: [
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use:["file-loader"]
+        },
+        {
+            test: /\.styl$/i,
+            loader: [
+              "style-loader","css-loader","stylus-loader",
+            ],
+        },
         {
             test: /\.less$/i,
             loader: [
